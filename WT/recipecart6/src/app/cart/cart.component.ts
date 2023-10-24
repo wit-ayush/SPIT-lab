@@ -37,7 +37,7 @@ export class CartComponent {
   checkout() {
     const totalCost = this.getTotalCost();
     if (totalCost) {
-      alert(`Total Cost of Cart: $${totalCost.toFixed(2)}. Do you want to proceed to the payment gateway?`);
+      alert(`Total Cost of Cart: INR ${totalCost.toFixed(2)}. Do you want to proceed to the payment gateway?`);
     } else {
       alert(`Need to add something, to make something`);
     }
