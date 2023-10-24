@@ -1,3 +1,40 @@
-<div style="display: flex; flex: 1; height: '100%'; width: '100%'; background-color: bisque;">
-  <h1>Cart</h1>
+<!-- cart.component.html -->
+
+<div class="cart-container">
+  <div class="cart-header">
+    <h2>Your Cart</h2>
+    <p>Total Cost: ${{ getTotalCost() | number:'1.2-2' }}</p>
+    <button mat-raised-button color="primary" (click)="checkout()">Checkout</button>
+    <p>Review and proceed to checkout.</p>
+  </div>
+
+  <mat-card class="cart-item" *ngFor="let item of cartItems; let i = index">
+    <mat-card-header>
+      <div mat-card-avatar class="cart-image"></div>
+      <mat-card-title>{{ item.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="quantity-container">
+        <button mat-icon-button (click)="decreaseQuantity(i)">
+          <mat-icon>remove</mat-icon>
+        </button>
+        <span class="quantity">{{ item.quantity }}</span>
+        <button mat-icon-button (click)="increaseQuantity(i)">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+      <p>Total Price: ${{ item.price }}</p>
+      <p>Ingredients:</p>
+      <ul>
+        <li *ngFor="let ingredient of item.ingredients">{{ ingredient }}</li>
+      </ul>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button color="warn" (click)="removeItem(i)">Remove</button>
+    </mat-card-actions>
+  </mat-card>
+  
+  <div *ngIf="cartItems.length === 0" class="empty-cart">
+    <p>Your cart is empty.</p>
+  </div>
 </div>

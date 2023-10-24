@@ -1,3 +1,30 @@
-<div style="display: flex; flex: 1; height: '100%'; width: '100%'; background-color: bisque;">
-  <h1>Recipe</h1>
+<!-- recipe.component.html -->
+
+<div class="recipe-container">
+  <div class="recipe-header">
+    <h2>Delicious Desserts</h2>
+    <p>Try out these mouthwatering dessert recipes!</p>
+  </div>
+
+  <mat-card class="recipe-card" *ngFor="let recipe of recipes">
+    <mat-card-header>
+      <div mat-card-avatar style="margin: 10px;" class="recipe-image" [style.background-image]="'url(' + recipe.imageUrl + ')'"></div>
+      <div style="align-self: center;">
+        <mat-card-title>{{ recipe.name }}</mat-card-title>
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+      <h4 style="text-decoration-line: underline; font-style: oblique;">what it is about:</h4>
+      <p class="description">{{ recipe.description }}</p>
+      <h4 style="text-decoration-line: underline; font-style: oblique;">What you need:</h4>
+      <p class="ingredients">{{ recipe.ingredients.join(', ') }}</p>
+      <h4 style="text-decoration-line: underline; font-style: oblique;">How to do this:</h4>
+      <ol class="instructions">
+        <li *ngFor="let instruction of recipe.instructions">{{ instruction }}</li>
+      </ol>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button color="primary" (click)="addToCart(recipe)">Add to Cart</button>
+    </mat-card-actions>
+  </mat-card>
 </div>

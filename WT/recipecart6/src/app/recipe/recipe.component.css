@@ -1,0 +1,38 @@
+/* recipe.component.css */
+
+.recipe-container {
+  margin: 20px;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.recipe-header {
+  text-align: left;
+}
+
+.recipe-card {
+  margin-bottom: 20px;
+}
+
+.recipe-image {
+  background-color: #ccc;
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  align-self: center;
+  border-radius: 20%;
+}
+
+.description {
+  font-size: 1.1em;
+}
+
+.ingredients {
+  font-style: italic;
+  margin: 5px 0;
+}
+
+.instructions {
+  padding-left: 20px;
+}
