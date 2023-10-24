@@ -1,0 +1,36 @@
+<div style="display: flex; flex: 1; width: 100vw; flex-direction: row; justify-content: space-around;">
+  <div style="background-color: aquamarine; width: 45vw; justify-content: center; align-content: center;">
+    <ng-container *ngFor="let item of data">
+      <div style="display: flex; flex:1; justify-content: center;">
+        Product Name: {{ item.name }} <br />
+        Price: {{ item.price }} <br />
+      </div>
+      <div style="display: flex; justify-content: space-evenly;">
+        <button type="button" class="operator" (click)="handleaddtocart(item.id,item.name, item.price)" value="">+</button>
+        <button type="button" class="operator" (click)="handleremovetocart(item.id, item.price)" value="">-</button>
+      </div>
+      <hr />
+    </ng-container>
+  </div>
+  <div style="background-color: rgb(234, 174, 242); width: 45vw; justify-content: center; align-content: center;">
+    Products in cart
+    <input type="text"  [value]="total" disabled />
+    <hr />
+
+    <ng-container *ngFor="let item of cart">
+      <div *ngIf="item.id != 0">
+        <div style="display: flex; flex:1; justify-content: center;">
+          Product Name: {{ item && item.name }} <br />
+          Price: {{ item && item.price }} <br />
+        </div>
+        <hr />
+      </div>
+      <div *ngIf="cart.length === 1">
+        <div style="display: flex; flex:1; justify-content: center;">
+          Your Cart is empty
+        </div>
+        <hr />
+      </div>
+    </ng-container>
+  </div>
+</div>
