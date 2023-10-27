@@ -61,6 +61,18 @@ export class AppComponent {
     )
     this.total = this.total + price
   }
+
+  handleclearcart() {
+    this.cart =  [
+      {
+        id: 0,
+        name:'',
+        price: 0,
+      },
+    ]
+    this.total = 0;
+  }
+
   handleremovetocart(id: number, price: number ) {
     var tempcart = this.cart.filter(item => item.id != id)
     this.cart = tempcart

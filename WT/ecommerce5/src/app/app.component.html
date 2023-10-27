@@ -16,6 +16,7 @@
     Products in cart
     <input type="text"  [value]="total" disabled />
     <hr />
+    <button type="button" class="operator" (click)="handleclearcart()">Clear cart</button>
 
     <ng-container *ngFor="let item of cart">
       <div *ngIf="item.id != 0">
