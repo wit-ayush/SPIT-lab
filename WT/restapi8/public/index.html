@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Node App Template</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #333; /* Dark background */
+            color: #f4f4f4; /* Light text color */
+            padding: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input, button, span {
+            background-color: #444; /* Dark gray background */
+            color: #f4f4f4; /* Light text color */
+            border: none;
+            padding: 8px 12px;
+            margin: 0;
+            font-size: 16px;
+        }
+        input::placeholder {
+            color: #aaa; /* Light gray placeholder text */
+        }
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/get/greeting" method="GET">
+        <input name="firstname" type="text" placeholder="First Name">
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+    <form action="/post/add" method="POST">
+        <input name="num1" type="number">
+        <span>+</span>
+        <input name="num2" type="number">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+</html>
