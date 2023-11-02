@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import CreateAccount from "./components/CreateAccount";
+import Home from "./components/Home";
+import { useSelector } from "react-redux";
+import Landing from "./components/Landing";
+import Login from "./components/Login";
+import EditProfile from "./components/EditProfile";
 
-function App() {
+const App = () => {
+  const accountData = JSON.parse(useSelector(state => state.accountData));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        {accountData && (
+          <div className="header">
+            <h2 className="title">
+              {accountData?.name_first} {accountData?.name_middle}{" "}
+              {accountData?.name_last}
+            </h2>
+            <Link to="/edit-profile" className="button">
+              Edit Profile
+            </Link>
+          </div>
+        )}
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/create-account" element={<CreateAccount />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/edit-profile" element={<EditProfile />} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
