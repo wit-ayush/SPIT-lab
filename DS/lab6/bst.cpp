@@ -1,9 +1,11 @@
+//bst based on ID of book records
+
 #include <iostream>
 using namespace std;
 
 struct bookdata {
   string name, author;
-  int pages, year;
+  int pages, year, id;
 };
 
 class TreeNode {
@@ -23,27 +25,22 @@ class BinaryTree{
     BinaryTree() : root(nullptr) {}
 
     void bstTree(bookdata val, TreeNode* newNode, TreeNode* currNode) {
-      if(currNode -> data.name > val.name){
+      if(currNode -> data.id > val.id){
         if( currNode -> left == nullptr){
-          cout << "4 " << endl;
           currNode -> left = newNode;
         } else{
-          cout << "5 " << endl;
           currNode = currNode -> left;
           bstTree(val, newNode, currNode);
         }
       } else{
         if( currNode -> right == nullptr){
-          cout << "6 " << endl;          
           currNode -> right = newNode;
         } else{
-          cout << "7 " << endl;
           currNode = currNode -> right;
           bstTree(val, newNode, currNode);
         }
       }
     }
-    
 
     void insert(bookdata val) {
       TreeNode* newNode = new TreeNode(val);
@@ -55,17 +52,55 @@ class BinaryTree{
       }
     }
 
+    // This is preOrderTraverse
     void traverse(TreeNode* temp) {
       if (temp) {
         cout << "Book Details >> " << endl;
+        cout << "Book Id: " << temp -> data.id << endl;
         cout << "Book name: " << temp -> data.name << endl;
         cout << "Book author: " << temp -> data.author << endl;
         cout << "Total pages: " << temp -> data.pages << endl;
         cout << "Release year: " << temp -> data.year << endl;
-        cout << "-------------------" << endl;
+        cout << "++++++++++++++++++++++++++++++++++++++++++++++" << endl;
         traverse(temp -> left);
         traverse(temp -> right);
       }
+    }
+
+    void search(TreeNode* temp, int &id){
+      if( temp -> data.id == id ){
+        cout << "Book Id: " << temp -> data.id << endl;
+        cout << "Book name: " << temp -> data.name << endl;
+        cout << "Book author: " << temp -> data.author << endl;
+        cout << "Total pages: " << temp -> data.pages << endl;
+        cout << "Release year: " << temp -> data.year << endl;
+        cout << "++++++++++++++++++++++++++++++++++++++++++++++" << endl;
+      } 
+      else if(temp -> data.id > id){
+        if( temp -> left == nullptr){
+          cout << "There is No book with id : " << id << endl;
+        } else{
+          temp = temp -> left;
+          search(temp, id);
+        }
+      } else{
+        if( temp -> right == nullptr){
+          cout << "There is No book with id : " << id << endl;
+        } else{
+          temp = temp -> right;
+          search(temp, id);
+        }
+      }
+
+      return;
+    }
+
+    void findById(int &id) {
+      if (!root) {
+        cout << "Tree is empty!" << endl;
+        return;
+      }
+      search(root, id);
     }
 
     void displayBooks() {
@@ -81,6 +116,7 @@ class BinaryTree{
 bookdata getInput() {
   bookdata val;
   cin.ignore();
+
   cout << "Enter Book Name: ";
   getline(cin, val.name);
   
@@ -92,6 +128,9 @@ bookdata getInput() {
 
   cout << "Enter Release Year: ";
   cin >> val.year;
+
+  cout << "Enter Id for book: ";
+  cin >> val.id;
 
   cin.ignore();
 
@@ -106,12 +145,13 @@ int main () {
   cout << "Enter your choice: " << endl;
   cout << "1. Add data" << endl;
   cout << "2. Display data" << endl;
-  cout << "3. Exit" << endl;
+  cout << "3. Search using Id" << endl;
+  cout << "4. Exit" << endl;
   
   int choice;
   cin >> choice;
   
-  while (choice != 3)
+  while (choice != 4)
   {
     switch (choice)
     {
@@ -125,6 +165,14 @@ int main () {
       case 2:
       {
         bt.displayBooks();
+        break;
+      }
+      case 3:
+      {
+        int id;
+        cout<<"Enter Id number: ";
+        cin >> id;
+        bt.findById(id);
         break;
       }
       default:
