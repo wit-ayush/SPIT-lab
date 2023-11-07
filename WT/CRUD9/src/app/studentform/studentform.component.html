@@ -1,22 +1,68 @@
-<div class="container mt-4">
-  <h2>Add Student</h2>
-  <form (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="firstName">First Name:</label>
-      <input type="text" class="form-control" id="firstName" [(ngModel)]="student.firstName" name="firstName" required>
+<div style=" height: 100vh; width: 65vw;">
+  <div class="CRUD-form">
+    <div class="CRUD-input-group">
+      <label for="name">Name:</label>
+      <input style="background-color: #e8f0fe;" type="text" id="name" [(ngModel)]="student.name">
     </div>
-    <div class="form-group">
-      <label for="lastName">Last Name:</label>
-      <input type="text" class="form-control" id="lastName" [(ngModel)]="student.lastName" name="lastName" required>
+
+    <div class="CRUD-input-group">
+      <label for="ucid">UCID:</label>
+      <input style="background-color: #e8f0fe;" type="text" id="ucid" [(ngModel)]="student.ucid">
     </div>
-    <div class="form-group">
-      <label for="age">Age:</label>
-      <input type="number" class="form-control" id="age" [(ngModel)]="student.age" name="age" required>
+
+    <div class="CRUD-input-group">
+      <label for="branch">Branch:</label>
+      <input style="background-color: #e8f0fe;" type="text" id="branch" [(ngModel)]="student.branch">
     </div>
-    <div class="form-group">
-      <label for="grade">Grade:</label>
-      <input type="text" class="form-control" id="grade" [(ngModel)]="student.grade" name="grade" required>
+
+    <div class="CRUD-input-group">
+      <label for="marks">Marks:</label>
+      <input style="background-color: #e8f0fe;" type="number" id="marks" [(ngModel)]="student.marks">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+    <div style="margin-top: 15px;">
+      <button (click)="addStudent()">Submit</button>
+    </div>
+  </div>
+
+  <div class="CRUD-divider"></div>
+
+  <div class="CRUD-display-section">
+    <h2 style="color: black; font-style: italic; top: 50px;">Student List</h2>
+    <ul>
+      <li *ngFor="let student of students">
+        <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+          <div>
+            Name: {{ student.name }} <br /> 
+            UCID: {{ student.ucid }} <br />
+            Branch: {{ student.branch }}<br />
+            Marks: {{ student.marks }}<br />
+          </div>
+          <div>
+            <button (click)="deleteStudent(student._id)">Delete</button>
+            <button (click)="openUpdateModal(student)">Update</button>
+          </div>
+        </div>
+        <div class="CRUD-divider"></div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="popup-modal" [style.display]="updateModal ? 'flex' : 'none'">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <h2 style="color: black;">Update Student</h2>
+      <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        Name <input type="text" [(ngModel)]="updateStudentData.name"><br>
+        UCID <input type="text" [(ngModel)]="updateStudentData.ucid"><br>
+        Branch <input type="text" [(ngModel)]="updateStudentData.branch"><br>
+        Marks <input type="number" [(ngModel)]="updateStudentData.marks"><br>
+        <div style="display: flex; flex-direction: row;">
+          <button (click)="updateStudent()">Update</button>
+          <button (click)="closeModal()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
 </div>

@@ -3,18 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { StudentformComponent } from './studentform/studentform.component';
-import { StudentdisplayComponent } from './studentdisplay/studentdisplay.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { StudentFormComponent } from './studentform/studentform.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StudentformComponent,
-    StudentdisplayComponent
+    StudentFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
