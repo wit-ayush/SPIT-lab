@@ -25,6 +25,7 @@ public:
 
             if (v1 < n && v2 < n) {
                 graphMatrix[v1][v2] = 1;
+                graphMatrix[v2][v1] = 1;
             } else {
                 cout << "Vertex id is out of array bounding index!!" << endl;
             }
@@ -44,8 +45,17 @@ public:
         return;
     }
 
-    void neighbourVertex(int search) {
-        
+    void neighbourVertex(int n, vector<vector<int>>& graphMatrix) {
+        int vid;
+        cout << "Enter Vertex you want to know the neighbour Vertices of: ";
+        cin >> vid;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if(i == vid && graphMatrix[i][j] == 1){
+                    cout << j << endl;
+                }
+            }
+        }
         return;
     }
 };
@@ -75,9 +85,7 @@ int main() {
                 gr.traverseGraph(n, graphMatrix);
                 break;
             case 3:
-                cout << "Enter Vertex you want to know the neighbour Vertices of: ";
-                cin >> neighbourV;
-                gr.neighbourVertex(neighbourV);
+                gr.neighbourVertex(n, graphMatrix);
                 break;
             default:
                 cout << "Select available options only" << endl;
@@ -93,3 +101,4 @@ int main() {
     }
     return 0;
 }
+
