@@ -1,7 +1,11 @@
 /* src/components/Home.css */
 
 .home-container {
-  text-align: center;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: left;
   margin: 10px;
   color: #fff; /* Set text color to white */
 }
@@ -21,7 +25,7 @@
 }
 
 .button {
-  padding: 10px 20px;
+  padding: 10px 10px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
@@ -38,7 +42,7 @@
 }
 
 .data-container {
-  max-width: 400px;
+  max-width: 90vw;
   margin: 0 auto;
   text-align: left;
 }

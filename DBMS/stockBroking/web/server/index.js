@@ -93,3 +93,27 @@ app.delete('/api/clients/:id', (req, res) => {
     }
   });
 });
+
+app.get('/api/getStocks', (req, res) => {
+
+  let sql = 'SELECT * FROM Stocks';
+
+  db.query(sql, [req.params.phone], (err, results) => {
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    }
+    res.json(results);
+  });
+});
+
+app.get('/api/getPortfolio', (req, res) => {
+
+  let sql = 'SELECT * FROM Stocks';
+
+  db.query(sql, [req.params.phone], (err, results) => {
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    }
+    res.json(results);
+  });
+});

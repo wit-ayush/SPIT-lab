@@ -1,19 +1,32 @@
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
-flush privileges;
+-- ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
+-- flush privileges;
 
 CREATE DATABASE finwizards;
 USE finwizards;
 
 CREATE TABLE Clients (
-    clientId INT PRIMARY KEY ,
+    clientId INT PRIMARY KEY auto_increment,
     name_first VARCHAR(255),
     name_last VARCHAR(255),
     name_middle VARCHAR(255),
     contact_info VARCHAR(255),
-    kyc VARCHAR(255),
-    balance DECIMAL(10, 2),
+    kyc boolean,
+    balance DECIMAL(10, 2) default 0.00,
     age INT
 );
+insert into Clients values (
+	 2,
+	 "Ayush",
+	 "Tripathi",
+	 "Ajay",
+	 "9137390942",
+	 true,
+	 45000,
+	 21
+);
+
+select * from client_portfolios where clientId = 1;
+select * from stock_portfolio;
 
 CREATE TABLE Stocks (
     stockId INT PRIMARY KEY,
@@ -21,6 +34,12 @@ CREATE TABLE Stocks (
     ticker VARCHAR(10),
     cmp DECIMAL(10, 2)
 );
+insert into Stocks values (
+	2,
+     "HDFC",
+     "HDFC",
+     1450account_typeclientId
+ );
 
 CREATE TABLE Transactions (
     transactionId INT PRIMARY KEY,
@@ -155,3 +174,10 @@ CREATE TABLE Watchlist_Stocks (
     FOREIGN KEY (watchlistId) REFERENCES Watchlists(watchlistId),
     FOREIGN KEY (stockId) REFERENCES Stocks(stockId)
 );
+-- insert into Watchlists values (
+-- 	1
+-- );
+-- insert into Watchlist_Stocks values (
+-- 	1,
+--     2
+-- );
