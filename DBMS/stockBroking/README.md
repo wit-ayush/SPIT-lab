@@ -16,11 +16,11 @@ The Stock Broking Management System is designed to provide essential functionali
 ## Setup
 Clone the repository to your local machine:
 
-<!-- bash -->
-git clone https://github.com/your-username/stock-broking-management-system.git
+<!-- bash --> 
+git clone https://github.com/wit-ayush/SPIT-lab.git
 
 ## Commands
-cd stockBroking/web
+cd DBMS/stockBroking/web
 npm install
 
 <!-- frontend -->
