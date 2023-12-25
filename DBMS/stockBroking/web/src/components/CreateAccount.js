@@ -16,7 +16,7 @@ const CreateAccount = () => {
     name_last: "",
     name_middle: "",
     contact_info: "",
-    kyc: "done",
+    kyc: false,
     balance: 0,
     age: 0,
   });

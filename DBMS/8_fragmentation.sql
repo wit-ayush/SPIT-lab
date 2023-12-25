@@ -24,3 +24,4 @@ VALUES
    (5, 'dabi', '202 St.', 30000, 'IT');
    
 select * from employee_parent;
+select * from employee_parent where salary > 25000;
