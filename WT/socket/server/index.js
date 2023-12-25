@@ -15,7 +15,7 @@ const io = socketIo(server, {
 });
 
 // Connect to MongoDB Atlas
-const mongoURI = 'mongodb+srv://ayush:qMyxXcwm5G69KZ3@cluster0.dcubcr0.mongodb.net/';
+const mongoURI = 'DbUrl'; // Password fave been changed, no point of digging through commits.
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Define MongoDB Schema and Model for Game
