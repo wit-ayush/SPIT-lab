@@ -1,0 +1,96 @@
+body {
+  background-color: rgba(128, 128, 128, 0.529);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.todo-container {
+  background-color: rgba(255, 228, 196);
+  padding: 20px;
+  border-radius: 8px;
+  width: 50vw;
+  color: #000000; 
+}
+
+.add-todo {
+  margin-bottom: 20px;
+  background-color: rgba(128, 128, 128, 0.529);
+  padding: 30px;
+  border-radius: 8px;
+  display: flex;
+}
+
+input {
+  flex-grow: 1;
+  background-color: #FFFFFF;
+  color: #000000; 
+  padding: 8px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+button {
+  background-color: grey;
+  color: #FFFFFF; 
+  padding: 8px;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
+.todo-list {
+  list-style-type: none;
+  padding: 30px;
+  border-radius: 8px;
+  padding: 0;
+}
+
+.todo-item {
+  background-color: rgba(128, 128, 128, 0.529);
+  border: 1px solid grey;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-info {
+  display: flex;
+  align-items: center;
+}
+
+.time {
+  margin-right: 15px;
+}
+
+.todo-text {
+  flex-grow: 1;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.todo-actions {
+  display: flex;
+  align-items: center;
+}
+
+select {
+  background-color: grey;
+  color: #FFFFFF; 
+  padding: 5px;
+  border: 1px solid grey; 
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: #FFA07A; 
+}

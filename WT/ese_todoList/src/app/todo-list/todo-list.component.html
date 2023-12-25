@@ -1,0 +1,23 @@
+<div class="todo-container">
+  <div class="add-todo">
+    <input [(ngModel)]="newTodoText" placeholder="New Task" />
+    <button (click)="addTodo()">Add</button>
+  </div>
+  <ul class="todo-list">
+    <li *ngFor="let todo of todos" class="todo-item">
+      <div class="todo-info">
+        <span class="time">{{ formatTime(todo.id) }}</span>
+        <span [class.completed]="todo.status === 'done'" class="todo-text">{{ todo.text }}</span>
+      </div>
+      <div class="todo-actions">
+        <select [(ngModel)]="todo.status" (change)="updateStatus(todo.id, todo.status)">
+          <option value="pending">Pending</option>
+          <option value="inprogress">In Progress</option>
+          <option value="done">Done</option>
+        </select>
+        <button (click)="removeTodo(todo.id)">Remove</button>
+      </div>
+    </li>
+  </ul>
+</div>
+

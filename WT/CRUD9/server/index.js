@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 
-mongoose.connect('mongodb+srv://codepyx23:Ayush%40a1a2a3a4a5a6@cluster0.e7vsca1.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('dbURL', { useNewUrlParser: true, useUnifiedTopology: true });
 
 
 const studentSchema = new mongoose.Schema({
