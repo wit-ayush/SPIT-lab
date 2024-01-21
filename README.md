@@ -4,11 +4,13 @@ Welcome to my GitHub repository where I store the practical assignments and proj
 This repository covers topics in Database Management Systems (DBMS), Data Structures, and Web Technology (Angular) by Semester 1.
 
 ## Table of Contents
-- [DBMS](#DBMS)
-- [Data Structures](#DS)
-- [Web Technology (Angular)](#WT)
-- [Usage](#usage)
-- [Contributing](#contributing)
+- Under Semester 1
+  - [DBMS](#DBMS)
+  - [Data Structures](#DS)
+  - [Web Technology (Angular)](#WT)
+  - [Usage](#usage)
+  - [Contributing](#contributing)
+- Under Semester 2
 
 ## DBMS
 This section contains practical assignments related to Database Management Systems. 
