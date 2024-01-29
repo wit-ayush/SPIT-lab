@@ -142,10 +142,10 @@ class BasicQuestions {
         System.out.println("Sum is " + finalSum);
     }
     
-    public static void AgeBasedOnDOB(String date) {
-        for( int i = (date.length() - 1); i){
-
-        }
+    public static void AgeBasedOnDOB() {
+        int birthYear = 2003;
+        int currentYear = 2024;
+        System.out.println("Your age is: " + (currentYear - birthYear));
     }
 
     public static void PatternPrint( int n) {
@@ -157,22 +157,121 @@ class BasicQuestions {
         }
     }
 
+    public static void DivisionOfNum(int n, int m) {
+        if(m != 0){
+            System.out.println("Division of " + m + "/" + n + " number is: "+ (n/m));
+        }else{
+            System.out.println("Number 2 cannot be zero");
+        }
+    }
+
+    public static void IntToChar(Scanner Scanner) {
+        Scanner s = new Scanner(System.in); 
+        System.out.print("Enter a single-digit number: "); 
+        int num = s.nextInt(); 
+        String[] arr = {"zero", "one", "two", "three", "four", "five", "six", "seven", 
+        "eight", "nine"}; 
+        if (num >= 0 && num <= 9) { 
+        System.out.println(arr[num]); 
+        } else { 
+        System.out.println("Invalid input. Please enter a single-digit number."); 
+        } 
+    }
+
+    public static void CheckPrime(int num) {
+        for (int i = 2; i <= num / 2; i++) { 
+            if (num % i == 0) { 
+                System.out.println("The given number is not a prime number"); 
+                return;
+            }
+        } 
+        System.out.println("It is a prime number"); 
+    }
+
+    public static void CheckLeapYear(int year) {
+        if(year%4 == 0 && year%100!=0 || (year%400 == 0)) 
+            System.out.println("The year "+year+" is a leap year."); 
+        else 
+            System.out.println("It is not a leap year."); 
+    }
+
+    public static void PosNdNeg(int number) {
+        if (number > 0) 
+            System.out.println("The number is positive."); 
+        else if (number < 0) 
+            System.out.println("The number is negative."); 
+        else
+            System.out.println("The number is zero."); 
+    }
+
+    public static void SumOfNatuNum(int num1) {
+        int num2 = num1*(num1+1)/2; 
+        System.out.println("The Sum of " +num1+ " natural numbers is: " +num2); 
+    }
+
+    public static void Factorial(int n) {
+        int num = 1;
+        for (int i = 1; i <= n; i++) num *= i; 
+        System.out.println("The factorial of number " + n + " is: " + num); 
+    }
+    
+    public static void AllPrimeTillN(int num) {
+        System.out.print("Prime numbers up to " + num + ": ");
+        for (int i = 2; i < num; i++) { 
+            boolean isPrime = true; 
+            for (int j = 2; j < i; j++) { 
+                if (i % j == 0) { 
+                    isPrime = false; 
+                    break; 
+                } 
+            } 
+            if (isPrime) { 
+                System.out.print(i + " "); 
+            } 
+        } 
+        System.out.println();
+    }
+    
+    public static void VowelOrNot(char c) {
+        if(c == 'a' || c == 'i' ||c == 'e' || c == 'o' || c == 'u'){ 
+            System.out.println(c+" is a vowel."); 
+        } 
+        else { 
+            System.out.println(c+"is not a vowel"); 
+        } 
+    }
+
     public static void SimpleInterst() {
-        int principle = 5000; 
-        int percentage = 5; 
-        int time = 5;
-        int finalPayment = principle*(1 + (percentage/100) * time*365);
-        System.out.println("principle: 5000, interest rate: 5%, time: 5 days will generate total payment to be done is "+ finalPayment);
+        int Principal = 68956;
+        int InterestRate = 12;
+        int time = 3; 
+        int FinalAmount = Principal + (Principal * InterestRate * time)/100; 
+        int SimpleInterest = FinalAmount - Principal; 
+        System.out.println("The interest amount is: "+SimpleInterest); 
+    }
+
+    public static void OctalToDecimal() {
+        int decimalNumber = 0; 
+        int power = 0; 
+        String octalNumber = "1111"; 
+        for (int i = octalNumber.length() - 1; i >= 0; i--) { 
+            int digit = Character.getNumericValue(octalNumber.charAt(i)); 
+            decimalNumber += digit * Math.pow(8, power); 
+            power++; 
+        } 
+        System.out.println("Decimal equivalent: " + decimalNumber); 
     }
 
 }
 
 public class basic1 {
     public static void main(String args[]) {
+
+        Scanner scanner = new Scanner(System.in);
         BasicQuestions obj = new BasicQuestions();
         
         // 1. To Generate Multiplication Table
-        // obj.multiplicationTable(5)
+        // obj.multiplicationTable(5);
 
         // 2.      To Find GCD of two Numbers
         // obj.GCD(18, 42);
@@ -202,7 +301,7 @@ public class basic1 {
         // obj.AddTenOfSeries(5);
 
         // 11.  W.A.P to print your Age based on your Birth date
-        obj.AgeBasedOnDOB("11-04-2003")
+        // obj.AgeBasedOnDOB();
 
         // 12.  W.A.P to create  the following output :-
 
@@ -215,32 +314,44 @@ public class basic1 {
         //         1111
 
         //         11111  
-        obj.PatternPrint(5);
+        // obj.PatternPrint(5);
+
         // 13.  W.A.P to accept any two numbers and perform division on it ( If the number is in decimal value         then convert them into a whole number)
+        // obj.DivisionOfNum(6, 3);
 
         // 14.  W.A.P to convert number in characters (E.g. 123 , Output One Two Three )
+        // obj.IntToChar(scanner);
 
         // 15.  To convert Number to word
+        // obj.IntToChar(scanner);
 
         // 16.  Java Program to Check Whether a Number is Prime or Not using different control structure
+        // obj.CheckPrime(11);
 
         // 17. To Check a Leap year
-
+        // obj.CheckLeapYear(2011);
+        
         // 18. To check whether a number is positive or negative
-
+        // obj.PosNdNeg(-55);
+        
         // 19. To calculate the sum of Natural Numbers
-
+        // obj.SumOfNatuNum(5);
+        
         // 20. To Find the factorial of a Number
-
+        // obj.Factorial(5);
+        
         // 21.To display all prime numbers from 1 to N.
+        // obj.AllPrimeTillN(20);
 
         // 22.To check whether Input character is Vowel or Not.
+        // obj.VowelOrNot('o');
 
         // 23.To calculate simple Interest
         // obj.SimpleInterst();
 
         // 24.To convert octal to decimal conversion
-
+        // obj.OctalToDecimal();
+        
         // 25. Conclude what is the difference between JAVA and C++
     }
 }
