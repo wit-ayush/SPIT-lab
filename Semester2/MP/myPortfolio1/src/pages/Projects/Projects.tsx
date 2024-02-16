@@ -21,7 +21,7 @@ const Projects: React.FC = () => {
     {
       title: 'Quant Finance Model',
       description: 'Built a quantitative finance model for financial analysis.',
-      image: 'https://media.istockphoto.com/id/1363023762/photo/neuron-network-deep-learning-with-financial-data-quantitative-trading.jpg?s=612x612&w=0&k=20&c=Dm9L7kVR9SbCpcOHcfGOTr_DPmbHyi3tjU7_zeNw9Vo=',
+      image: 'https://img.freepik.com/premium-photo/future-financial-technology-controlled-by-ai-robot-using-machine-learning_31965-10328.jpg?size=626&ext=jpg',
     },
     {
       title: 'E-commerce X Social Networking',
