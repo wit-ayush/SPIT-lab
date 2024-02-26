@@ -152,7 +152,13 @@ class BasicQuestions {
 
     public static void PatternPrint( int n) {
         for(int i = 1; i <= n; i++){
-            for(int j = 1; j <= i; j++){
+        	for(int k = n - 1; k >= i; k--){
+                System.out.print(" ");
+            }
+        	for(int j = 2; j <= i; j++){
+                System.out.print("*");
+            }
+        	for(int l = 1; l <= i; l++){
                 System.out.print("*");
             }
             System.out.println();
@@ -316,13 +322,13 @@ public class basic1 {
         //         1111
 
         //         11111  
-        // obj.PatternPrint(5);
+//         obj.PatternPrint(5);
 
         // 13.  W.A.P to accept any two numbers and perform division on it ( If the number is in decimal value         then convert them into a whole number)
         // obj.DivisionOfNum(6, 3);
 
         // 14.  W.A.P to convert number in characters (E.g. 123 , Output One Two Three )
-        // obj.IntToChar(scanner);
+         obj.IntToChar(scanner);
 
         // 15.  To convert Number to word
         // obj.IntToChar(scanner);
