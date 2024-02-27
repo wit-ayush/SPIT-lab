@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "spit-app-tony": {
+      "hosting": {
+        "app": [
+          "spit-app-tony"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "spit-app-tony"
+  }
+}

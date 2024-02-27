@@ -1,0 +1,55 @@
+/* Styles for skills */
+.skills {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 2px;
+  background: rgb(80, 80, 80);
+}
+
+/* Styles for ion-accordion content */
+ion-accordion .ion-padding[slot="content"] {
+  background-color: rgb(48, 107, 162); /* Change the background color */
+  color: #cac7b6; /* Change the text color */
+  /* Add any other styling as needed */
+}
+
+/* Styles for custom header */
+.custom-header {
+  height: 60px;
+}
+
+/* Styles for header content */
+.header-content {
+  display: flex;
+  align-items: center;
+  /* Adjust padding as needed */
+}
+
+/* Styles for logo */
+.logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .custom-header {
+    height: 40px;
+  }
+
+  .logo {
+    margin-right: 5px;
+    height: 30px;
+    width: 30px;
+  }
+
+  .header-content {
+    margin: 0px;
+  }
+
+  .text-content {
+    font-size: 12px;
+  }
+}

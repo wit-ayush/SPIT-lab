@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    
+    <ion-title>
+      <div class="header-content">
+        <img class="logo" src="https://www.spit.ac.in/wp-content/themes/spit-main/images/SPIT_logo.png" />
+        <div class="text-content">
+          <small>Bhartiya Vidya Bhavan's</small><br />
+          <strong>Sardar Patel Institute of Technology</strong>
+        </div>
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card>
+    <ion-card-content>
+
+      <ion-card-title>Rate Us</ion-card-title>
+      <ion-card-subtitle>Help us improve</ion-card-subtitle>
+      <br><br>
+      <ion-list>
+  
+        <!-- Your Name -->
+        <ion-item>
+          <ion-label position="floating">Your Name</ion-label>
+          <ion-input aria-label="Name" labelPlacement="floating" [(ngModel)]="name" name="name" type="text" required></ion-input>
+        </ion-item>
+        <br>
+        <!-- Email -->
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input aria-label="Email" type="email" labelPlacement="floating" [(ngModel)]="email" name="email" type="email" required></ion-input>
+        </ion-item>
+        <br>
+
+        <!-- Star Rating -->
+        <ion-item>
+          <ion-label position="stacked">Rate our app</ion-label>
+          <app-star-rating [(rating)]="selectedRating"></app-star-rating>
+        </ion-item>
+        <br>
+        <!-- Feedback -->
+        <ion-item>
+          <ion-label position="floating">Feedback</ion-label>
+          <ion-textarea aria-label="Feedback" [(ngModel)]="feedback" name="feedback" required></ion-textarea>
+        </ion-item>
+  
+      </ion-list>
+  
+      <!-- Submit Button -->
+      <ion-button expand="full" (click)="submitFeedback()">Submit Feedback</ion-button>
+  
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>

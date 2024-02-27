@@ -1,0 +1,40 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay" class="custom-menu">
+      <ion-header style="align-items: center;">
+        <img style=" margin: 10px; border-radius: 500px; height: 280px; width: 280px;" src="https://media.licdn.com/dms/image/D4D03AQHkbQMKVwv8dA/profile-displayphoto-shrink_800_800/0/1702583002287?e=1714003200&v=beta&t=u-FbtRc1OkTcjintoYXusZ2_TRi6Loq9IguoXqbfNVc" alt="Ayush">
+        <ion-toolbar color="rgb(192, 191, 199);" class="menu-header">
+          <div style="display: flex; flex-direction: column;">
+            <ion-title class="menu-title" style="display: flex; flex-direction: column; top: 8px">
+              <div>
+              Ayush
+              </div>
+              <ion-icon icon="mail-outline"></ion-icon> ayush.tripathi23&#64;spit.ac.in
+            </ion-title>
+          </div>
+        </ion-toolbar>
+ 
+      </ion-header>
+
+      <ion-content>
+        <ion-list id="inbox-list">
+          <ion-menu-toggle *ngFor="let p of appPages;">
+            <ion-item
+              routerDirection="root"
+              [routerLink]="[p.url]"
+              lines="none"
+              detail="false"
+              routerLinkActive="selected"
+              class="menu-item">
+              
+              <ion-icon aria-hidden="true" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+              <ion-label class="menu-label">{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

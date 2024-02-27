@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <!-- <ion-menu-button></ion-menu-button> -->
+    </ion-buttons>
+
+    <ion-title>
+      <div class="header-content">
+        <img class="logo" src="https://www.spit.ac.in/wp-content/themes/spit-main/images/SPIT_logo.png" />
+        <div class="text-content">
+          <small>Bhartiya Vidya Bhavan's</small><br />
+          <strong>Sardar Patel Institute of Technology</strong>
+        </div>
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <img style="border-radius: 50%; height: 100px; " src="https://static.vecteezy.com/system/resources/previews/000/574/215/original/vector-sign-of-user-icon.jpg" alt="">
+    <p class="title">Login</p>
+    <p class="subTitle">Log into your account so you can manage your college curriculum</p>
+  </div>
+
+  <form>
+    <div class="ion-padding">
+      <ion-item>
+        <ion-input placeholder="Enter your username"></ion-input>
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Enter your password"></ion-input>
+        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+      </ion-item>
+      <div class="forgotPassword">
+        <a [routerLink]="['../reset-password']">Forgot Password</a>
+      </div>
+      <div>
+        <p>New member? <a [routerLink]="['../register']">Register</a> </p>
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <ion-button class="ion-margin" href="tabs/home">Login<ion-icon name="arrow-forward-outline"></ion-icon></ion-button>
+      </div>      
+    </div>
+  </form>
+  
+</ion-content>

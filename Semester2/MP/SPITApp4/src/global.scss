@@ -1,0 +1,94 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+  
+  
+  ion-accordion{
+    padding: 10px;
+    border-radius: 23px;
+  }
+
+  /* Custom styles for ion-accordion content */
+  ion-accordion .ion-padding[slot="content"] {
+    background-color: rgb(0, 42, 82); /* Change the background color */
+    color: #cac7b6; /* Change the text color */
+    /* Add any other styling as needed */
+  }
+  
+  .ion-color-light {
+    --ion-color-base: rgb(16, 37, 55) !important;
+  }
+
+  
+
+ion-label{
+    // box-shadow: 10px 10px green;
+    display: block;
+    // border-radius: 30px;
+}
+
+.custom-header {
+    height: 60px;
+    background-color: black;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.text-content{
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+  .custom-header {
+      height: 40px;
+  }
+
+  .logo {
+      margin-right: 5px;
+      /* Remove right margin on smaller screens */
+      height: 30px;
+      width: 30px;
+  }
+
+  .header-content {
+      margin: 0px;
+  }
+
+  .text-content {
+      font-size: 12px;
+  }
+}

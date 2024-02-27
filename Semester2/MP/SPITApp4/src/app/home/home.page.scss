@@ -1,0 +1,110 @@
+/* Custom Header */
+.custom-header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    justify-content: space-between; // Add space between elements
+  }
+  
+  .logo {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .text-content {
+    flex: 1;
+  }
+  
+  /* Swiper Styles */
+  .swiper-container {
+    width: 100%;
+    height: 300px;
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Blockquote Styles */
+  blockquote {
+    font-style: italic;
+    color: #c1c0c0;
+    quotes: "\201C" "\201D";
+    text-align: center; // Center the text
+  }
+  
+  blockquote h2:before {
+    content: open-quote;
+    font-weight: bold;
+    font-size: 70px;
+    color: #889c0b;
+    margin-bottom: -20px;
+  }
+  
+  /* Ion Card Styles */
+  ion-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    box-shadow: 0 6px 10px rgba(16, 37, 55, 0.1); // Update box shadow color and transparency
+    border-radius: 10px;
+  
+    img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px 10px 0 0;
+      object-fit: cover;
+    }
+  
+    ion-card-header {
+      ion-card-title {
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+  
+      ion-card-subtitle {
+        font-size: 0.9em;
+        color: #777;
+      }
+    }
+  
+    ion-card-content {
+      padding: 10px; // Adjust padding
+      color: #888888;
+      text-align: justify; // Align text to justify
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .custom-header {
+      height: 40px;
+      padding: 0 0px; // Adjust padding for smaller screens
+    }
+  
+    .logo {
+      margin-right: 5px;
+      height: 30px;
+      width: 30px;
+    }
+  
+    .header-content {
+      margin: 0;
+    }
+  
+    .text-content {
+      font-size: 12px;
+    }
+  
+    .swiper-container {
+      width: auto;
+      height: auto;
+    }
+  }
+  
