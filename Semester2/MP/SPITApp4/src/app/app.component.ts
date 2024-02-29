@@ -43,7 +43,7 @@ import { IonicModule } from '@ionic/angular';
 import { addIcons } from 'ionicons';
 import { register } from 'swiper/element/bundle';
 import { RouterLink } from '@angular/router';
-import {sunny, moon, toggleOutline, heartOutline, mailOutline, paperPlane, paperPlaneOutline, archiveOutline, trashOutline, warningOutline, homeOutline, peopleOutline } from 'ionicons/icons';
+import {sunny, moon, toggleOutline, heartOutline, mailOutline, paperPlane, paperPlaneOutline, archiveOutline, trashOutline, warningOutline, homeOutline, peopleOutline, calendarOutline} from 'ionicons/icons';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { ThemeService } from './theme.service';
@@ -69,7 +69,7 @@ register();
 export class AppComponent {
   selectedPath = '';
   constructor(public themeService: ThemeService) {
-    addIcons({sunny, moon, toggleOutline, heartOutline, mailOutline, paperPlane, paperPlaneOutline, archiveOutline, trashOutline, warningOutline, homeOutline, peopleOutline });
+    addIcons({sunny, moon, toggleOutline, heartOutline, mailOutline, paperPlane, paperPlaneOutline, archiveOutline, trashOutline, warningOutline, homeOutline, peopleOutline, calendarOutline });
     this.themeService.isDarkMode$.subscribe((darkMode) => {
       document.body.classList.toggle('dark', darkMode);
     });
@@ -89,6 +89,7 @@ export class AppComponent {
     { title: 'Faculties', url: './tabs/tab2', icon: 'people' },
     { title: 'Notifications', url: './tabs/tab3', icon: 'heart' },
     { title: 'Feedback', url: './tabs/tab4', icon: 'archive' },
+    { title: 'Events', url: './tabs/events', icon: 'calendar' },
     { title: 'Rules', url: '/tabs/rules', icon: 'trash' },
     { title: 'Signout', url: 'login/', icon: 'paper-plane' },
   ];

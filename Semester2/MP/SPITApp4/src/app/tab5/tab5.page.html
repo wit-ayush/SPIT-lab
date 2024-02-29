@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <!-- <app-side-menu></app-side-menu> -->
+
+    <ion-title>
+      <div class="header-content">
+        <img class="logo" src="https://www.spit.ac.in/wp-content/themes/spit-main/images/SPIT_logo.png" />
+        <div class="text-content">
+          <small>Bhartiya Vidya Bhavan's</small><br />
+          <strong style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Sardar Patel Institute of Technology</strong>
+        </div>
+      </div>
+    </ion-title>
+     
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+<br><br>
+
+  <!-- <ion-list> -->
+    <ion-accordion-group *ngFor="let department of departments">
+      <ion-accordion value="{{ department.name }}">
+        <ion-item slot="header" style="background-color: rgb(255, 166, 0);">
+          {{ department.name }}
+        </ion-item>
+        <ion-label slot="content">
+            <ion-accordion-group *ngFor="let events of department.events" style="margin: 10px;">
+              <ion-accordion value=1 style="background-color: rgb(23, 28, 67);">
+                <ion-item slot="header" style="color: rgb(62, 163, 241)">
+                  <ion-label style="font-size: 18px;">{{events.eventName}}
+                    <p>Time: {{events.time}}</p>
+                  </ion-label>
+                </ion-item>
+             
+                <ion-label slot="content" style="font-size: 16px; background-color: rgb(0, 42, 82);">
+                  <p class="skills" style="padding: 10px; color: whitesmoke;">Speaker: {{events.organizer}}</p>
+                  <p style="padding-left: 10px; padding-right: 10px; color: whitesmoke;">{{ events.details }}</p>
+                  <div style="cursor: pointer;" (click)="openEventUrl(events.webUrl)">
+                    <div style="flex: 1; flex-direction: column; padding-left: 10px; padding-right: 10px; padding-bottom: 10px;">
+                      <h3 style="color: rgb(255, 183, 0);">Click Here for Registration</h3>
+                    </div>
+                  </div>
+                </ion-label>
+              </ion-accordion>
+            </ion-accordion-group>
+        </ion-label>
+      </ion-accordion>
+    </ion-accordion-group>
+    
+  <!-- </ion-list> -->
+  
+
+</ion-content>

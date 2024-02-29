@@ -132,7 +132,7 @@ export class Tab2Page {
       ]
     },
     {
-      departmentName: 'Electronics & Telecommunications Engineering',
+      departmentName: 'Extc',
       faculties: [
         {
           image: 'https://extc.spit.ac.in/files/2011/12/DrYSRao.png',
