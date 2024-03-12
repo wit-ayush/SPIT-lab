@@ -34,6 +34,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import SplashScreen from './pages/SplashScreen';
 
 setupIonicReact();
 
@@ -54,8 +55,11 @@ const App: React.FC = () => (
           <Route path="/tab4">
             <Tab4 />
           </Route>
+          <Route path="/splash">
+            <SplashScreen />
+          </Route>
           <Route exact path="/">
-            <Redirect to="/tab2" />
+            <Redirect to="/splash" />
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">

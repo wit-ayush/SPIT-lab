@@ -1,0 +1,23 @@
+.splash-content {
+  --ion-background-color: #ffffff; /* Set background color to white */
+}
+
+.splash {
+  text-align: center;
+  color: #333333; /* Set text color to dark gray */
+}
+
+.logo {
+  height: 60vh;
+  width: 100%; /* Set the logo image width to 50% of the screen */
+  margin-bottom: 20px; /* Add some bottom margin to the logo */
+}
+
+.splash h1 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.splash p {
+  font-size: 16px;
+}

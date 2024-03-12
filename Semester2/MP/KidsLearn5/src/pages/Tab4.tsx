@@ -16,7 +16,7 @@ import {
 } from '@ionic/react';
 import { personCircleOutline, logOutOutline } from 'ionicons/icons';
 
-const Profile: React.FC = () => {
+const Tab4: React.FC = () => {
   const [name, setName] = useState('Ayush Tripathi');
   const [email, setEmail] = useState('ayush.tripathi23@spit.ac.in');
   const [password, setPassword] = useState('');
@@ -112,4 +112,4 @@ const Profile: React.FC = () => {
   );
 };
 
-export default Profile;
+export default Tab4;
