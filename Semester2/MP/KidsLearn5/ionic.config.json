@@ -1,0 +1,7 @@
+{
+  "name": "KidsLearn5",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
