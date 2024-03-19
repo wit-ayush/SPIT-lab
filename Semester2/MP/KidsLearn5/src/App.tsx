@@ -10,11 +10,12 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { fileTrayFullSharp, gitNetwork, personCircleOutline, trophy } from 'ionicons/icons';
+import { fileTrayFullSharp, gitNetwork, personCircleOutline, qrCodeOutline, trophy } from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
 import Tab4 from './pages/Tab4';
+import Tab5 from './pages/Tab5';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -43,7 +44,7 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route exact path="/tab1">
+          <Route exact path="/tab1/:lesson/:youtubeLink">
             <Tab1 />
           </Route>
           <Route exact path="/tab2">
@@ -54,6 +55,9 @@ const App: React.FC = () => (
           </Route>
           <Route path="/tab4">
             <Tab4 />
+          </Route>
+          <Route path="/tab5">
+            <Tab5 />
           </Route>
           <Route path="/splash">
             <SplashScreen />
@@ -70,6 +74,10 @@ const App: React.FC = () => (
           <IonTabButton tab="tab2" href="/tab2">
             <IonIcon aria-hidden="true" icon={fileTrayFullSharp} />
             <IonLabel>Lessons</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="tab5" href="/tab5">
+            <IonIcon aria-hidden="true" icon={qrCodeOutline} />
+            <IonLabel>Quiz</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tab3" href="/tab3">
             <IonIcon aria-hidden="true" icon={trophy} />

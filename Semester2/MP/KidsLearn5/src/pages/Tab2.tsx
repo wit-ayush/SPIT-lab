@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonList, IonItem, IonLabel, IonSelect, IonSelectOption, IonPage, IonHeader, IonToolbar, IonTitle } from '@ionic/react';
+import { IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonList, IonItem, IonLabel, IonPage, IonHeader, IonToolbar, IonTitle } from '@ionic/react';
 import { useHistory } from 'react-router';
 
 const Tab2: React.FC = () => {
@@ -12,9 +12,10 @@ const Tab2: React.FC = () => {
   const history = useHistory();
   const [selectedSubject, setSelectedSubject] = useState<string | undefined>(undefined);
 
-  const handleLessonClick = (lesson: string) => {
-    // Navigate to Tab1 with the selected lesson as a query parameter
-    history.push(`/tab1?lesson=${lesson}`);
+  const handleLessonClick = (lesson: string, youtubeLink: string) => {
+    const encodedYoutubeLink = encodeURIComponent(youtubeLink);
+    const url = `/tab1/${lesson}/${encodedYoutubeLink}`;
+    history.push(url);
   };
 
   return (
@@ -34,7 +35,7 @@ const Tab2: React.FC = () => {
               <IonCardContent>
                 <IonList>
                   {subject.lessons.map(lesson => (
-                    <IonItem onClick={() => handleLessonClick(lesson)} key={lesson}>
+                    <IonItem onClick={() => handleLessonClick(lesson, "https://www.youtube.com/embed/x6D51-pz2A4?autoplay=1")} key={lesson}>
                       <IonLabel>{lesson}</IonLabel>
                     </IonItem>
                   ))}
