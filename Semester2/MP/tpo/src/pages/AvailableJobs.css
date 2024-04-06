@@ -1,0 +1,8 @@
+.dark-background {
+  background-color: #111; /* Dark background color */
+}
+
+.green-card {
+  background-color: #4CAF50; /* Green card background color */
+  margin-bottom: 10px; /* Add some margin bottom to separate cards */
+}
