@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>
+      Camera App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center" color="dark" style="background-color: #1f1f1f;">
+  <div style="top: 20px;">
+    <ion-button expand="block" (click)="takePhoto()" style="margin: 20px auto; width: 80%;">
+      Open Gallery
+    </ion-button>
+
+    <ion-button expand="block" (click)="openGallery()" style="margin: 20px auto; width: 80%;">
+      Take Photo
+    </ion-button>
+
+    <br><br>
+    <h2 style="margin-left: 10px;">Photos: </h2>
+    <ion-item *ngFor="let photos of photoTaken">
+      <ion-img *ngIf="photos" [src]="photos"></ion-img>
+    </ion-item>
+  </div>
+</ion-content>
