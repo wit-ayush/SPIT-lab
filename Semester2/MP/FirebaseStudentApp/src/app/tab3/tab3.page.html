@@ -3,7 +3,7 @@
     <div class="title">Feedbacks</div>
   </div>
   <div>
-    <ion-list style="background-color: grey;">
+    <ion-list>
       <ng-container *ngIf="feedbacks.length > 0; else noRecords">
         <div *ngFor="let feedback of feedbacks" style="background-color: white; margin-bottom: 1rem;">
           <ion-label style="color: black;">
