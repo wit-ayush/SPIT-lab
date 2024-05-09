@@ -1,0 +1,51 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+// @import "@ionic/angular/css/palettes/dark.always.css";
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+// @import "@ionic/angular/css/palettes/dark.system.css";
+// Custom colors
+$light-green: #a6d9a7;
+$ion-color-step-alpha: rgba($light-green, 0.08);
+$ion-color-step-beta: rgba($light-green, 0.16);
+$ion-color-step-gamma: rgba($light-green, 0.24);
+$ion-color-step-delta: rgba($light-green, 0.32);
+$ion-color-step-epsilon: rgba($light-green, 0.4);
+$ion-color-step-zeta: rgba($light-green, 0.48);
+$ion-color-step-eta: rgba($light-green, 0.56);
+$ion-color-step-theta: rgba($light-green, 0.64);
+$ion-color-step-iota: rgba($light-green, 0.72);
+
+
+$ion-background-color: #ffffff;

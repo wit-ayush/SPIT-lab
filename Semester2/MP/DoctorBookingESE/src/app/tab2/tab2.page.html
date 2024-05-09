@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar  color="#a6d9a7" style="background-color: rgba(142, 220, 94, 0.808);">
+    <ion-title>Show Bookings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item style="background-color: #a6d9a7;" *ngFor="let booking of bookingsdata">
+      <ion-label>
+        <h2>{{ booking.name }}, Age: {{ booking.age }}</h2>
+        <p>Symptoms: {{ booking.symptoms }}</p>
+        <p>Doctor: {{ booking.doctor }}</p>
+        <p>Date of Visit: {{ booking.dateOfVisit | date }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
